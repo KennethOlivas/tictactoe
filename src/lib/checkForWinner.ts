@@ -2,6 +2,7 @@ import {
   diagonal1Winner,
   horizontalWinner,
   verticalWinner,
+  diagonal2Winner
 } from "@lib/winners";
 import { BoardActionKind, updateBoardAction } from "@types";
 import { Dispatch } from "react";
@@ -68,7 +69,7 @@ export const checkForWinner = (
   ) {
     dispatchWinnerBoard({
       type: BoardActionKind.UPDATE,
-      payload: diagonal1Winner(diagonal2[0]),
+      payload: diagonal2Winner(diagonal2[0]),
     });
     return diagonal2[0];
   }
