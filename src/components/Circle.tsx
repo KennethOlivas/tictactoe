@@ -1,6 +1,7 @@
 import { animate, inicial, transition } from "@Common/animationIcon";
 import { motion } from "framer-motion";
 import { FC } from "react";
+
 /**
  * It's a React component that renders an SVG with a motion.path element that animates between two
  * states

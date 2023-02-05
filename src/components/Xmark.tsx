@@ -2,8 +2,12 @@ import { animate, inicial, transition } from "@Common/animationIcon";
 import { motion } from "framer-motion";
 import { FC } from "react";
 
-const Xmark: FC = () => {
+/**
+ * A React component that renders an SVG.
+ * @returns A React component that renders an SVG element.
+ */
 
+const Xmark: FC = () => {
   return (
     <>
       <svg

@@ -2,9 +2,17 @@ import { inicial, transition, animate } from "@Common/animationIcon";
 import { motion } from "framer-motion";
 import { FC } from "react";
 
+
 type Props = {
   onClick: () => void;
 };
+
+/**
+ * A functional component that takes in a prop called onClick. It returns a button that has a click
+ * event listener that calls the onClick prop.
+ * @param  - initial - the initial state of the component
+ * @returns A button with the text "Reset"
+ */
 
 const ResetButton: FC<Props> = ({ onClick }) => {
   return (

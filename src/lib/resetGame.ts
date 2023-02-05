@@ -1,12 +1,12 @@
 import { BoardActionKind, updateBoardAction } from "@types";
-import { Dispatch } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 type BoardAction = {
   dispatch: Dispatch<updateBoardAction>;
   dispatchWinnerBoard: Dispatch<updateBoardAction>;
-  setPlayer: Dispatch<React.SetStateAction<string>>;
-  setGameOver: Dispatch<React.SetStateAction<boolean>>;
-  setStatus: Dispatch<React.SetStateAction<string>>;
+  setPlayer: Dispatch<SetStateAction<string>>;
+  setGameOver: Dispatch<SetStateAction<boolean>>;
+  setStatus: Dispatch<SetStateAction<string>>;
 };
 
 export const resetGame = ({

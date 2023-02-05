@@ -2,6 +2,15 @@ import { FC } from "react";
 import Square from "@Components/Square";
 import { motion } from "framer-motion";
 import { container, item } from "@Common/animationIcon";
+
+type Props = {
+  board: Array<Array<string>>;
+  player: string;
+  gameOver: boolean;
+  onClick: (row: number, col: number) => void;
+  winnerBoard: Array<Array<string>>;
+};
+
 /**
  * Props is an object with a board property that is an array of arrays of strings, a player property
  * that is a string, a gameOver property that is a boolean, an onClick property that is a function that
@@ -13,14 +22,6 @@ import { container, item } from "@Common/animationIcon";
  * @property onClick - This is a function that will be called when a square is clicked.
  * @property winnerBoard - This is the board that is used to determine if a player has won.
  */
-
-type Props = {
-  board: Array<Array<string>>;
-  player: string;
-  gameOver: boolean;
-  onClick: (row: number, col: number) => void;
-  winnerBoard: Array<Array<string>>;
-};
 
 const Board: FC<Props> = ({
   board,

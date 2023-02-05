@@ -1,4 +1,4 @@
-import { FC, useCallback, useMemo, useState } from "react";
+import { FC, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import Circle from "@Components/Circle";
 import Xmark from "@Components/Xmark";
@@ -10,6 +10,17 @@ type Props = {
   disabled: boolean;
   winner: boolean;
 };
+
+/**
+ * It's a React component that renders a button that displays either an X or an O, and when clicked,
+ * calls a function that updates the state of the parent component
+ * @param  - initial - the initial state of the animation
+ * @props onClick - This is a function that will be called when a square is clicked.
+ * @props value - This is the value of the square.
+ * @props player - This is the current player.
+ * @props disabled - This is a boolean that determines if the square is disabled.
+ * @props winner - This is a boolean that determines if the square is a winner.
+ */
 
 const Square: FC<Props> = ({ disabled, onClick, player, value, winner }) => {
   const style = useMemo(() => {
