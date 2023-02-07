@@ -27,7 +27,7 @@ const Square: FC<Props> = ({ disabled, onClick, player, value, winner }) => {
     if (winner) {
       return "w-20 h-20 sm:w-40 sm:h-40 bg-green/50 border-4 rounded-xl border-green transition-all duration-150 flex justify-center items-center";
     }
-    return "w-20 h-20 sm:w-40 sm:h-40 bg-transparent border-4 rounded-xl border-cream hover:bg-light/20 transition-all duration-150 flex justify-center items-center";
+    return "w-20 h-20 sm:w-40 sm:h-40 hover:shadow-[0_0_0.8rem] hover:shadow-cream scale-100 hover:scale-105 bg-transparent border-4 rounded-xl border-cream hover:bg-light/20 transition-all duration-150 flex justify-center items-center";
   }, [winner]);
   const [squareValue, setSquareValue] = useState(value);
 

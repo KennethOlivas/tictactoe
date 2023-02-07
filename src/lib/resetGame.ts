@@ -26,5 +26,5 @@ export const resetGame = ({
   });
   setPlayer("X");
   setGameOver(false);
-  setStatus("X");
+  setStatus("Current player: X");
 };

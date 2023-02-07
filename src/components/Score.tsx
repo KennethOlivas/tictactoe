@@ -1,11 +1,11 @@
+import { FC } from "react";
 
+type Props = {
+  score: string;
+};
 
-type Props = {}
+const Score: FC<Props> = ({ score }) => (
+  <h1 className="text-3xl font-bold text-lightCream">{score}</h1>
+);
 
-const Score = (props: Props) => {
-  return (
-    <div>Score</div>
-  )
-}
-
-export default Score
+export default Score;

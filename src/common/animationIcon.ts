@@ -26,7 +26,7 @@ export const animate: AnimationControls | TargetAndTransition = {
 
 export const transition: Transition = {
   default: {
-    duration: 0.5,
+    duration: 0.4,
   },
   scale: {
     type: "spring",

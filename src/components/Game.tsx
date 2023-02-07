@@ -29,7 +29,7 @@ const Game = () => {
 
   const [player, setPlayer] = useState("X");
   const [gameOver, setGameOver] = useState(false);
-  const [status, setStatus] = useState("X");
+  const [status, setStatus] = useState("Current player: X");
 
   const handleClick = (row: number, col: number) => {
     if (gameOver || board[row][col] !== "") {
@@ -48,11 +48,13 @@ const Game = () => {
     const newPlayer = player === "X" ? "O" : "X";
     setPlayer(newPlayer);
 
-    setStatus(`Next player: ${newPlayer}`);
+    setStatus(`Current player: ${newPlayer}`);
 
     const winner = checkForWinner(newBoard, dispatchWinnerBoard);
     if (winner) {
-      setStatus(`Winner: ${winner}`);
+      const result =
+        winner === "X" || winner === "O" ? `Winner: ${winner}` : "Draw 🫡";
+      setStatus(result);
       setGameOver(true);
     }
   };
@@ -69,7 +71,6 @@ const Game = () => {
 
   return (
     <div className="flex flex-col h-screen w-screen justify-center items-center space-y-12 bg-aqua">
-      <h1 className="text-3xl font-bold text-lightCream">Player: {player}</h1>
       <h1 className="text-3xl font-bold text-lightCream">{status}</h1>
       <Board
         board={board}

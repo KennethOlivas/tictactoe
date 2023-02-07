@@ -29,37 +29,35 @@ const Board: FC<Props> = ({
   gameOver,
   onClick,
   winnerBoard,
-}) => {
-  return (
-    <div className="flex">
-      <motion.ul variants={container} initial="hidden" animate="visible">
-        {board.map((row, rowIndex) => {
-          return (
-            <div className="flex" key={rowIndex}>
-              {row.map((square, squareIndex) => {
-                return (
-                  <motion.li key={squareIndex} variants={item} className="flex">
-                    <Square
-                      winner={
-                        winnerBoard[rowIndex][squareIndex] === "X" ||
-                        winnerBoard[rowIndex][squareIndex] === "O"
-                      }
-                      value={square}
-                      disabled={gameOver}
-                      onClick={() => {
-                        onClick(rowIndex, squareIndex);
-                      }}
-                      player={player}
-                    />
-                  </motion.li>
-                );
-              })}
-            </div>
-          );
-        })}
-      </motion.ul>
-    </div>
-  );
-};
+}) => (
+  <div className="flex">
+    <motion.ul variants={container} initial="hidden" animate="visible">
+      {board.map((row, rowIndex) => {
+        return (
+          <div className="flex" key={rowIndex}>
+            {row.map((square, squareIndex) => {
+              return (
+                <motion.li key={squareIndex} variants={item} className="flex">
+                  <Square
+                    winner={
+                      winnerBoard[rowIndex][squareIndex] === "X" ||
+                      winnerBoard[rowIndex][squareIndex] === "O"
+                    }
+                    value={square}
+                    disabled={gameOver}
+                    onClick={() => {
+                      onClick(rowIndex, squareIndex);
+                    }}
+                    player={player}
+                  />
+                </motion.li>
+              );
+            })}
+          </div>
+        );
+      })}
+    </motion.ul>
+  </div>
+);
 
 export default Board;
